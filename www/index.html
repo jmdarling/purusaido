@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Purusaido</title>
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Soundcloud -->
+    <script src="lib/soundcloud/sdk.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/appController.js"></script>
+    <script src="js/dataService.js"></script>
+  </head>
+  <body ng-app="purusaido">
+
+    <ion-pane>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Purusaido</h1>
+      </ion-header-bar>
+      <div class="background-image"></div>
+      <ion-content ng-controller="appController">
+        <div class="main-container">
+          <div class="track-info">
+            <h1 class="track-info__title">{{currentTrack.title}}</h1>
+            <h2 class="track-info__artist">{{currentTrack.artist}}</h2>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="icon-button icon ion-play" ng-click="play()" ng-if="state === states.pause || state === states.stop"></button>
+              <button class="icon-button icon ion-pause" ng-click="pause()" ng-if="state === states.play"></button>
+            </div>
+            <div class="col" ng-if="state !== states.stop">
+              <button class="icon-button icon ion-skip-forward" ng-click="skip()"></button>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
