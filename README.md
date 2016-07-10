@@ -1,4 +1,4 @@
-Pūrusaido - Unofficial poolside.fm mobile app.
+プールサイド - Unofficial poolside.fm mobile app.
 =====================
 
 [Pūrusaido](https://translate.google.com/#auto/ja/poolside) - Japanese for 'Poolside'... Maybe
