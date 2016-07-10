@@ -1,5 +1,5 @@
 /* globals angular SC */
-angular.module('purusaido').controller('appController', ['$scope', 'dataService', function ($scope, dataService) {
+angular.module('purusaido').controller('appController', ['$scope', '$ionicLoading', 'dataService', function ($scope, $ionicLoading, dataService) {
   $scope.states = {
     play: 'play',
     pause: 'pause',
@@ -32,6 +32,11 @@ angular.module('purusaido').controller('appController', ['$scope', 'dataService'
     }
 
     $scope.currentTrack = getRandomTrack()
+    $scope.state = $scope.states.stop
+
+    $ionicLoading.show({
+      template: 'Loading...'
+    })
 
     SC.stream(`/tracks/${$scope.currentTrack.scId}`)
       .then(player => {
@@ -43,6 +48,7 @@ angular.module('purusaido').controller('appController', ['$scope', 'dataService'
           })
           $scope.state = $scope.states.play
         })
+        $ionicLoading.hide()
       })
       .catch(error => {
         console.error(error)

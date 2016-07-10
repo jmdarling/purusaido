@@ -30,8 +30,8 @@
       <ion-content ng-controller="appController">
         <div class="main-container">
           <div class="track-info">
-            <h1 class="track-info__title">{{currentTrack.title}}</h1>
-            <h2 class="track-info__artist">{{currentTrack.artist}}</h2>
+            <h1 class="track-info__title" ng-if="state !== states.stop">{{currentTrack.title}}</h1>
+            <h2 class="track-info__artist" ng-if="state !== states.stop">{{currentTrack.artist}}</h2>
           </div>
           <div class="row">
             <div class="col">

@@ -15,7 +15,7 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-$positive: #FF30AC;
+$positive: rgb(255, 190, 190);
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -35,7 +35,7 @@ ion-content {
 .icon-button {
   background: none;
   border: none;
-  color: #FF30AC;
+  color: white;
   display: block;
   font-size: 4rem;
   margin-left: auto;
@@ -43,17 +43,17 @@ ion-content {
 }
 
 .track-info {
-  color: #FF30AC;
+  color: white;
   height: 100px;
   text-align: center;
 }
 
 .track-info__artist {
-  color: #FF30AC;
+  color: white;
   font-size: 1rem;
 }
 
 .track-info__title {
-  color: #FF30AC;
+  color: white;
   font-size: 1.6rem;
 }
