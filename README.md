@@ -6,4 +6,14 @@
 It plays music from poolside.fm.
 
 ## Building
-I'll fill this in, eventually...
+1) Install the [Ionic CLI](https://github.com/driftyco/ionic-cli)
+2) npm i
+3) gulp default
+4) ionic serve
+
+## TODO
+- Device media controls / integration
+- Make it less hideous
+- Better building instructions
+- Ask the kind people at poolside for permission
+- Publish?
