@@ -1,7 +1,7 @@
 'use strict';
 
 /* globals angular */
-angular.module('purusaido').controller('appController', ['$scope', '$http', function ($scope, $http) {
+angular.module('purusaido').controller('appController', ['$scope', '$http', '$interval', function ($scope, $http, $interval) {
   $scope.states = {
     play: 'play',
     pause: 'pause',
@@ -35,7 +35,7 @@ angular.module('purusaido').controller('appController', ['$scope', '$http', func
     });
   };
 
-  setTimeout(function () {
+  $interval(function () {
     if ($scope.state === $scope.states.play) {
       getCurrentTrackTitle().then(function (title) {
         $scope.currentTrack = title;

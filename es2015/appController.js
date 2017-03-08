@@ -1,5 +1,5 @@
 /* globals angular */
-angular.module('purusaido').controller('appController', ['$scope', '$http', function ($scope, $http) {
+angular.module('purusaido').controller('appController', ['$scope', '$http', '$interval', function ($scope, $http, $interval) {
   $scope.states = {
     play: 'play',
     pause: 'pause',
@@ -34,7 +34,7 @@ angular.module('purusaido').controller('appController', ['$scope', '$http', func
       })
   }
 
-  setTimeout(() => {
+  $interval(() => {
     if ($scope.state === $scope.states.play) {
       getCurrentTrackTitle()
         .then(title => {
