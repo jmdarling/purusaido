@@ -1,14 +1,21 @@
 {
   "_args": [
     [
-      "soundcloud",
+      {
+        "raw": "soundcloud@^3.1.2",
+        "scope": null,
+        "escapedName": "soundcloud",
+        "name": "soundcloud",
+        "rawSpec": "^3.1.2",
+        "spec": ">=3.1.2 <4.0.0",
+        "type": "range"
+      },
       "/Users/jmdarling/Projects/purusaido"
     ]
   ],
-  "_from": "soundcloud@latest",
+  "_from": "soundcloud@>=3.1.2 <4.0.0",
   "_id": "soundcloud@3.1.2",
   "_inCache": true,
-  "_installable": true,
   "_location": "/soundcloud",
   "_nodeVersion": "0.12.9",
   "_npmOperationalInternal": {
@@ -16,18 +23,19 @@
     "tmp": "tmp/soundcloud-3.1.2.tgz_1465490192972_0.8554344971198589"
   },
   "_npmUser": {
-    "email": "diurnalist@gmail.com",
-    "name": "diurnalist"
+    "name": "diurnalist",
+    "email": "diurnalist@gmail.com"
   },
   "_npmVersion": "3.8.8",
   "_phantomChildren": {},
   "_requested": {
-    "name": "soundcloud",
-    "raw": "soundcloud",
-    "rawSpec": "",
+    "raw": "soundcloud@^3.1.2",
     "scope": null,
-    "spec": "latest",
-    "type": "tag"
+    "escapedName": "soundcloud",
+    "name": "soundcloud",
+    "rawSpec": "^3.1.2",
+    "spec": ">=3.1.2 <4.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
@@ -35,7 +43,7 @@
   "_resolved": "https://registry.npmjs.org/soundcloud/-/soundcloud-3.1.2.tgz",
   "_shasum": "a4ab2b1e14ec3195f6eaf89e742812e47f7954aa",
   "_shrinkwrap": null,
-  "_spec": "soundcloud",
+  "_spec": "soundcloud@^3.1.2",
   "_where": "/Users/jmdarling/Projects/purusaido",
   "author": {
     "name": "SoundCloud Ltd."
@@ -80,20 +88,20 @@
   "main": "sdk.js",
   "maintainers": [
     {
-      "email": "dean@ero.com",
-      "name": "deanh"
+      "name": "deanh",
+      "email": "dean@ero.com"
     },
     {
-      "email": "diurnalist@gmail.com",
-      "name": "diurnalist"
+      "name": "diurnalist",
+      "email": "diurnalist@gmail.com"
     },
     {
-      "email": "jan.monschke@gmail.com",
-      "name": "janmonschke"
+      "name": "janmonschke",
+      "email": "jan.monschke@gmail.com"
     },
     {
-      "email": "salomvary@gmail.com",
-      "name": "salomvary"
+      "name": "salomvary",
+      "email": "salomvary@gmail.com"
     }
   ],
   "name": "soundcloud",

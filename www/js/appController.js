@@ -1,70 +1,51 @@
 'use strict';
 
-/* globals angular SC */
-angular.module('purusaido').controller('appController', ['$scope', '$ionicLoading', 'dataService', function ($scope, $ionicLoading, dataService) {
+/* globals angular */
+angular.module('purusaido').controller('appController', ['$scope', '$http', function ($scope, $http) {
   $scope.states = {
     play: 'play',
     pause: 'pause',
     stop: 'stop'
   };
 
-  $scope.currentTrack = {};
-
-  $scope.player = {};
-
+  $scope.currentTrack = '';
   $scope.state = $scope.states.stop;
+  $scope.audio = new window.Audio('http://stream.radio.co/s98f81d47e/listen');
 
-  dataService.getTracks().then(function (response) {
-    $scope.tracks = response.data;
-
-    SC.initialize({
-      client_id: '4b6980dcd349603b96c8312647f9d6df'
-    });
-  }).catch(function (err) {
-    console.error(err);
-  });
-
-  $scope.play = function () {
-    if ($scope.state === $scope.states.pause) {
-      $scope.player.play();
-      $scope.state = $scope.states.play;
+  $scope.pause = function () {
+    if ($scope.state === $scope.states.pause || $scope.state === $scope.states.stop) {
       return;
     }
 
-    $scope.currentTrack = getRandomTrack();
-    $scope.state = $scope.states.stop;
-
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-
-    SC.stream('/tracks/' + $scope.currentTrack.scId).then(function (player) {
-      $scope.$apply(function () {
-        $scope.player = player;
-        $scope.player.play();
-        $scope.player.on('finish', function () {
-          $scope.play();
-        });
-        $scope.state = $scope.states.play;
-      });
-      $ionicLoading.hide();
-    }).catch(function (error) {
-      console.error(error);
-      $scope.play();
-    });
-  };
-
-  $scope.pause = function () {
-    $scope.player.pause();
+    $scope.audio.pause();
     $scope.state = $scope.states.pause;
+    $scope.currentTrack = '';
   };
 
-  $scope.skip = function () {
+  $scope.play = function () {
+    if ($scope.state === $scope.states.play) {
+      return;
+    }
+
+    $scope.audio.play();
     $scope.state = $scope.states.play;
-    $scope.play();
+
+    getCurrentTrackTitle().then(function (title) {
+      $scope.currentTrack = title;
+    });
   };
 
-  function getRandomTrack() {
-    return $scope.tracks[window.Math.floor(window.Math.random() * $scope.tracks.length)];
+  setTimeout(function () {
+    if ($scope.state === $scope.states.play) {
+      getCurrentTrackTitle().then(function (title) {
+        $scope.currentTrack = title;
+      });
+    }
+  }, 5000);
+
+  function getCurrentTrackTitle() {
+    return $http.get('https://public.radio.co/stations/s98f81d47e/status').then(function (response) {
+      return response.data.current_track.title;
+    });
   }
 }]);
