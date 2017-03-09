@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Purusaido
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="player">
+      <p 
+        class="player__track-info"
+        *ngIf="currentTrack != null && currentTrack !== ''">
+        {{currentTrack}}
+      </p>
+
+      <div class="player__controls">
+        <button
+          ion-button
+          large
+          clear
+          color="light"
+          icon-only
+          (click)="play()"
+          *ngIf="currentState === 'pause' || currentState === 'stop'">
+          <ion-icon name="play"></ion-icon>
+        </button>
+        <button
+          ion-button
+          large
+          clear
+          color="light"
+          icon-only
+          (click)="pause()"
+          *ngIf="currentState === 'play'">
+          <ion-icon name="pause"></ion-icon>
+        </button>
+      </div>
+    </div>
+</ion-content>

@@ -1,0 +1,26 @@
+ion-content {
+  background: url(../assets/images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.player {
+  background: transparentize(#333333, .3);
+  border-radius: 10px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 30vh;
+
+  &__controls {
+    text-align: center;
+  }
+
+  &__track-info {
+    padding: 5px;
+
+    color: #ffffff;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+
