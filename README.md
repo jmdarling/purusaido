@@ -3,13 +3,12 @@
 
 [Pūrusaido](https://translate.google.com/#auto/ja/poolside) - Japanese for 'Poolside'... Maybe
 
-It plays music from poolside.fm.
+It plays music from [poolside.fm](poolside.fm).
 
 ## Building
-1) Install the [Ionic CLI](https://github.com/driftyco/ionic-cli)
-2) npm i
-3) gulp default
-4) ionic serve
+1. Install the [Ionic CLI](https://github.com/driftyco/ionic-cli)
+2. npm i
+3. ionic serve
 
 ## TODO
 - Device media controls / integration
